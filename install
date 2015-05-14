@@ -1,0 +1,53 @@
+#!/bin/bash
+
+REQUIRED=(wget git hg tmux emacs24-nox)
+
+for require in "${REQUIRED[@]}"
+do
+    if hash "${require}" 2>/dev/null ; then
+  	echo "${require} already installed.";
+    else
+   	echo "Installing ${require}";
+        apt-get install -y ${require};
+    fi;
+done;
+
+# Bash it
+if [ ! -d ~/.bash_it ]; then
+    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it;
+    ~/.bash_it/install.sh;
+else
+    echo "bash_it already installed."
+fi
+
+# My Bash configs
+if [ ! -f ~/.mybashrc ]; then
+    echo "Installing mybashrc"
+    git clone https://github.com/TCMiranda/BashConfig.git ~/.mybash
+    ln -s ~/.mybash/conf ~/.mybashrc
+    echo "source ~/.mybashrc" >> ~/.bashrc
+else
+    RES=$(git -C ~/.mybash/ pull);
+    echo "mybashrc already installed. Updating... $RES"
+fi
+
+# My Emacs configs
+if [ ! -d ~/.myemacs ]; then
+    echo "Installing myemacs"
+    git clone https://github.com/TCMiranda/EmacsConfig.git ~/.myemacs
+    ln -s ~/.myemacs/conf .emacs
+else
+    RES=$(git -C ~/.mytmux/ pull);
+    echo "myemacs already installed. Updating... $RES"
+fi
+
+# My Tmux configs
+if [ ! -d ~/.mytmux ]; then
+    echo "Installing mytmux"
+    git clone https://github.com/TCMiranda/TmuxConfig.git ~/.mytmux
+    ln -s ~/.mytmux/conf .tmux.conf
+    ln -s ~/.mytmux/tmux .tmux
+else
+    RES=$(git -C ~/.mytmux/ pull);
+    echo "mytmux already installed. Updating... $RES"
+fi
