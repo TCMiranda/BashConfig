@@ -18,3 +18,4 @@ alias e="emacsclient -t";
 # Servers
 alias phpasdf="ssh root@phpasdf.ddns.net"
 alias rethinkdev="ssh root@rethinkdev.ddns.net"
+alias mybash.update="wget -qO- https://raw.githubusercontent.com/TCMiranda/BashConfig/master/install | bash"
