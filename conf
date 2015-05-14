@@ -1,0 +1,6 @@
+ME="Tiago Miranda"
+
+# Helpers
+command_exists () {
+    type "$1" &> /dev/null ;
+}
