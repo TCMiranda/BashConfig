@@ -13,9 +13,41 @@ command_exists () {
 
 ##
 # Alias
-alias e="emacsclient -t";
+alias ssh.link.ws.cx='ssh -L 6455:localhost:6455 tiago@home.vikingmakt.com.br -p 12000';
+alias ssh.link.ws.rently='ssh -L 8892:localhost:8892 tiago@home.vikingmakt.com.br -p 12000';
+alias ssh.link.fossil='ssh -L 9100:localhost:9100 tiago@home.vikingmakt.com.br -p 12000';
+
+alias cd.opt='cd ~/opt';
+
+alias cd.lunus.http='cd ~/opt/lunus-http';
+alias cd.lunus.socket='cd ~/opt/lunus-socket';
+alias cd.lunus.data='cd ~/opt/lunus-data';
+
+alias lunus.http='sh bin/dev';
+
+alias s.lunus.http='cd.lunus.http; lunus.http';
+alias s.lunus.server='cd.lunus.socket';
+
+alias tmux.n.dev='tmux new -s dev';
+alias tmux.a.dev='tmux a -t dev';
+
+alias tmux.s.dev='tmuxinator start dev';
+
+alias emacs='emacs-nox';
+alias ed='emacs --daemon';
+alias e='emacsclient -t';
 
 # Servers
 alias phpasdf="ssh root@phpasdf.ddns.net"
 alias rethinkdev="ssh root@rethinkdev.ddns.net"
 alias mybash.update="wget -qO- https://raw.githubusercontent.com/TCMiranda/BashConfig/master/install | bash"
+
+# Extensions
+source ~/.tmuxinator.bash
+
+export NVM_DIR="/home/tmiranda/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# General
+export EDITOR='emacs'
+export TERM=xterm-256color
