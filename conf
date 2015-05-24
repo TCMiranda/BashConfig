@@ -37,6 +37,8 @@ alias emacs='emacs-nox';
 alias ed='emacs --daemon';
 alias e='emacsclient -t';
 
+alias wgeto="wget -qO- ";
+
 # Servers
 alias phpasdf="ssh root@phpasdf.ddns.net"
 alias rethinkdev="ssh root@rethinkdev.ddns.net"
