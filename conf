@@ -23,6 +23,9 @@ alias cd.lunus.http='cd ~/opt/lunus-http';
 alias cd.lunus.socket='cd ~/opt/lunus-socket';
 alias cd.lunus.data='cd ~/opt/lunus-data';
 
+alias cd.www='/var/www/html/';
+alias cd.wp='/var/www/html/cookies4fun/www/';
+
 alias lunus.http='sh bin/dev';
 
 alias s.lunus.http='cd.lunus.http; lunus.http';
