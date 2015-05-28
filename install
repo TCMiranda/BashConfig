@@ -1,14 +1,25 @@
 #!/bin/bash
 
+# Pacapt install
+if hash pacapt 2>/dev/null ; then
+    echo "Pacpat already installed."
+else
+    echo "Installing Pacpat"
+    sudo wget -O /usr/local/bin/pacapt https://github.com/icy/pacapt/raw/ng/pacapt
+    sudo chmod 755 /usr/local/bin/pacapt
+    sudo ln -s /usr/local/bin/pacapt /usr/bin/pacapt
+    sudo ln -sv /usr/local/bin/pacapt /usr/local/bin/pacman || true
+fi;
+
 REQUIRED=(wget git hg tmux emacs24-nox)
 
 for require in "${REQUIRED[@]}"
 do
     if hash "${require}" 2>/dev/null ; then
-  	echo "${require} already installed.";
+  	    echo "${require} already installed.";
     else
-   	echo "Installing ${require}";
-        apt-get install -y ${require};
+   	    echo "Installing ${require}";
+        sudo pacapt -S ${require};
     fi;
 done;
 
