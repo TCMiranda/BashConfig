@@ -12,6 +12,10 @@ command_exists () {
 }
 
 ##
+# Paths
+PATH=$PATH:/home/tmiranda/.composer/vendor/bin/;
+
+##
 # Alias
 alias ssh.link.ws.cx='ssh -L 6455:localhost:6455 tiago@home.vikingmakt.com.br -p 12000';
 alias ssh.link.ws.rently='ssh -L 8892:localhost:8892 tiago@home.vikingmakt.com.br -p 12000';
