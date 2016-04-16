@@ -5,6 +5,8 @@
 ME="Tiago Miranda"
 MAIL="tgcvmr@gmail.com"
 
+BEEP="/usr/share/sounds/gnome/default/alerts/drip.ogg"
+
 ##
 # Helpers
 command_exists () {
@@ -13,12 +15,32 @@ command_exists () {
 
 ##
 # Paths
-PATH=$PATH:/home/tmiranda/.composer/vendor/bin/;
+
+export PKG_CONFIG_PATH=/usr/include/;
+
+# Use with cordova
+export ANDROID_HOME=/home/tmiranda/dev/android-sdk-linux
+export JAVA_HOME=/home/tmiranda/dev/jdk
+
+# Exports
+export PATH=$PATH:/home/tmiranda/.composer/vendor/bin/;
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:/usr/local/bin
 
 ##
 # Alias
+alias Popcorn='~/dev/popcorn_time/Popcorn-Time';
+alias xterm='xterm -bg rgb:22/22/22'
+alias beep='paplay $BEEP'
+
+alias flowly='/opt/google/chrome/google-chrome --profile-directory=Default --app-id=koegeopamaoljbmhnfjbclbocehhgmkm'
+
+alias rm='rm -I ';
+
 alias ssh.link.ws.cx='ssh -L 6455:localhost:6455 tiago@home.vikingmakt.com.br -p 12000';
 alias ssh.link.ws.rently='ssh -L 8892:localhost:8892 tiago@home.vikingmakt.com.br -p 12000';
+alias ssh.link.ws.meny='ssh -L 8883:localhost:8883 tiago@home.vikingmakt.com.br -p 12000';
 alias ssh.link.fossil='ssh -L 9100:localhost:9100 tiago@home.vikingmakt.com.br -p 12000';
 
 alias cd.opt='cd ~/opt';
@@ -40,6 +62,8 @@ alias tmux.a.dev='tmux a -t dev';
 
 alias tmux.s.dev='tmuxinator start dev';
 
+alias s.php='sudo systemctl start nginx && sudo systemctl start php-fpm';
+
 alias emacs='emacs-nox';
 alias ed='emacs --daemon';
 alias e='emacsclient -t';
@@ -49,6 +73,8 @@ alias wgeto="wget -qO- ";
 # Servers
 alias phpasdf="ssh root@phpasdf.ddns.net"
 alias rethinkdev="ssh root@rethinkdev.ddns.net"
+alias laleblu="ssh root@45.55.44.219"
+
 alias mybash.update="wget -qO- https://raw.githubusercontent.com/TCMiranda/BashConfig/master/install | bash"
 
 # Extensions
