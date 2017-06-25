@@ -97,6 +97,7 @@ alias s.php='sudo systemctl start nginx && sudo systemctl start php-fpm';
 
 alias faux='ps -faux';
 
+alias vscode='~/dev/VSCode/code';
 alias emacs='emacs-nox';
 alias ed='emacs --daemon';
 alias e='emacsclient -t';
