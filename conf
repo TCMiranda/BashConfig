@@ -65,7 +65,10 @@ export PKG_CONFIG_PATH=/usr/include/;
 
 # Use with cordova
 export ANDROID_HOME=/home/tmiranda/dev/android-sdk-linux
-export JAVA_HOME=/home/tmiranda/dev/jdk
+#export JAVA_HOME=/home/tmiranda/dev/jdk
+export JDK_HOME=/usr/lib/jvm/java-1.8.0-openjdk
+export JAVA_HOME=$JDK_HOME
+#/jre
 
 # Exports
 export PATH=$PATH:/home/tmiranda/.composer/vendor/bin/;
@@ -111,3 +114,10 @@ alias laleblu="ssh root@45.55.44.219"
 
 # General
 alias mybash.update="wget -qO- https://raw.githubusercontent.com/TCMiranda/BashConfig/master/install | bash"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /var/www/meny/app/server/node_modules/tabtab/.completions/serverless.bash ] && . /var/www/meny/app/server/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /var/www/meny/app/server/node_modules/tabtab/.completions/sls.bash ] && . /var/www/meny/app/server/node_modules/tabtab/.completions/sls.bash
